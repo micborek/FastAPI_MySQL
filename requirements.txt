@@ -1,0 +1,5 @@
+fastapi==0.112.2
+fastapi_pagination==0.12.26
+pydantic==2.8.2
+SQLAlchemy==2.0.32
+uvicorn==0.30.6
