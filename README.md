@@ -1,2 +1,4 @@
-# TaskAugust24
-MySQL &amp; FastAPI
+# MySQL &amp; FastAPI
+
+Create a simple FastAPI backend using MySQL Database
+
