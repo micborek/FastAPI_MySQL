@@ -1,4 +1,4 @@
 # MySQL &amp; FastAPI
 
-Create a simple FastAPI backend using MySQL Database
+Create FastAPI backend using MySQL Database
 

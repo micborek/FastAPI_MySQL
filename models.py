@@ -6,11 +6,11 @@ from database_handler import (
 from sqlalchemy.sql import func
 
 
-class Customer(Base):
+class User(Base):
     """Object–relational mapping """
     __tablename__ = 'customers'
 
-    CustomerID = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    UserID = Column(Integer, primary_key=True, index=True, autoincrement=True)
     FirstName = Column(String(50), nullable=False)
     LastName = Column(String(50), nullable=False)
     Email = Column(String(100), nullable=False)
@@ -24,7 +24,7 @@ class Order(Base):
     OrderID = Column(Integer, primary_key=True, index=True, autoincrement=True)
     OrderTitle = Column(String(50), nullable=False)
     OrderDescription = Column(String(200))
-    CustomerID = Column(ForeignKey(Customer.CustomerID))
+    UserID = Column(ForeignKey(User.UserID))
     CreatedAt = Column(DateTime(timezone=True), server_default=func.now())
 
 
