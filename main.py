@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 
-from validators import OrdersOut
+from validators import OrdersOut, PostUser
 
 from constants import API_METADATA
 
@@ -43,10 +43,12 @@ async def get_user(user_id: int, db: db_session):
 
 
 @app.post("/users/", status_code=status.HTTP_201_CREATED, tags=["Users"])
-async def add_user(first_name: str, last_name: str, email: str, db: db_session):
+async def add_user(user_input: PostUser, db: db_session):
     """Endpoint for adding a new user. Return created UserID or return an exception"""
 
-    user = models.User(FirstName=first_name, LastName=last_name, Email=email)
+    user = models.User(FirstName=user_input.first_name,
+                       LastName=user_input.last_name,
+                       Email=user_input.email)
     db.add(user)
     db.commit()
 

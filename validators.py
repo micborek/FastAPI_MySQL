@@ -7,3 +7,8 @@ class OrdersOut(BaseModel):
     OrderDescription: str
     CustomerID: int
     CreatedAt: datetime
+
+class PostUser(BaseModel):
+    first_name: str
+    last_name: str
+    email: str
